@@ -24,6 +24,12 @@ export default class Produto extends BaseModel {
   @column()
   public secao:string
 
+  @column()
+  public grupo:string
+
+  @column()
+  public subgrupo:string
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 

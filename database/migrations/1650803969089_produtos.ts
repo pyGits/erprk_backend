@@ -11,6 +11,8 @@ export default class Produtos extends BaseSchema {
       table.string('codigo').notNullable().unique()
       table.string('nome')
       table.string('secao')
+      table.string('grupo')
+      table.string('subgrupo')
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL

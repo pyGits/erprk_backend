@@ -59,4 +59,16 @@ export default class ProdutosController {
         }
     }
 
+    public async novo({}:HttpContextContract){
+      // gerar sequencial de código novo produto
+      const produto = {codigo:'1'};
+
+      return{
+        message:"Novo produto",
+        data:produto,
+      }
+
+
+    }
+
 }

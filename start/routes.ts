@@ -25,6 +25,8 @@ Route.get('/', async () => {
   return { hello: 'world' }
 })
 
+Route.get('/produtos/novo',"ProdutosController.novo");
+
 Route.resource("/produtos","ProdutosController").apiOnly();
 Route.resource("/produtos/:codigoproduto/precos","PrecosController").apiOnly();
 
