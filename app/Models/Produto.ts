@@ -30,6 +30,15 @@ export default class Produto extends BaseModel {
   @column()
   public subgrupo:string
 
+  @column()
+  public composicao:string
+
+  @column()
+  public formavenda:string
+
+  @column()
+  public unidade:string
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 

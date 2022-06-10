@@ -13,6 +13,9 @@ export default class Produtos extends BaseSchema {
       table.string('secao')
       table.string('grupo')
       table.string('subgrupo')
+      table.string('composicao')
+      table.string('formavenda')
+      table.string('unidade')
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
