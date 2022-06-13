@@ -11,4 +11,12 @@ export default class LojasController {
         data:loja,
     }
   }
+  public async index(){
+    const loja = await Loja.all();
+
+
+    return {
+        data:loja,
+    }
+  }
 }

@@ -21,6 +21,16 @@ export default class PrecosController {
         }
 
     }
+    public async index({params}:HttpContextContract){
+      const preco = await Preco.query().where('codigoproduto',params.codigoproduto).preload('lojas')
+
+      return{
+          data:preco,
+      }
+
+  }
+
+
 
 
 }

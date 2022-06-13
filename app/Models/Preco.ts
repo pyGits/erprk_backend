@@ -1,7 +1,14 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column,HasMany, hasMany} from '@ioc:Adonis/Lucid/Orm'
+import Loja from './Loja'
 
 export default class Preco extends BaseModel {
+  @hasMany(()=>Loja,{
+    localKey:'loja',
+    foreignKey:'id'
+  })
+  public lojas: HasMany<typeof Loja>
+
   @column({ isPrimary: true })
   public id: number
 
@@ -12,10 +19,16 @@ export default class Preco extends BaseModel {
   public codigoproduto:string
 
   @column()
-  public loja:string
+  public loja:number
 
   @column()
   public preco:string
+
+  @column()
+  public custo:string
+
+  @column()
+  public margem:string
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
