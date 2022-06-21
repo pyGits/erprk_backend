@@ -7,7 +7,7 @@ export default class Precos extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
       table.string('tenant_id').notNullable();
-      table.integer("loja").notNullable();
+      table.integer("loja")
 
       table.float("preco")
       table.float("custo")

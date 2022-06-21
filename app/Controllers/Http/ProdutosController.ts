@@ -35,8 +35,8 @@ export default class ProdutosController {
     // RETORNAR UM PRODUTO
     public async show({params}:HttpContextContract){
         const produto = await Produto.findByOrFail('codigo',params.id)
+        await produto.load('precos',(p)=> {p.preload('lojas')})
 
-        await produto.load('precos')
 
         return{
             data:produto,

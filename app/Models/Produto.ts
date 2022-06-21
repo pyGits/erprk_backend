@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column, HasMany, hasMany} from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, HasMany, hasMany } from '@ioc:Adonis/Lucid/Orm'
 import Preco from './Preco'
 
 export default class Produto extends BaseModel {
@@ -8,7 +8,6 @@ export default class Produto extends BaseModel {
     foreignKey:'codigoproduto'
   })
   public precos: HasMany<typeof Preco>
-
 
   @column({ isPrimary: true })
   public id: number
