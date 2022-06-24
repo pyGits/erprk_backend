@@ -64,6 +64,7 @@ export default class ProdutosController {
         await Preco.updateOrCreateMany('margem',body.precos)
 
 
+
         produto.nome = body.nome
         produto.secao = body.secao
         produto.grupo = body.grupo
@@ -89,15 +90,10 @@ export default class ProdutosController {
       let precos = new Array();
       // gerar preços novos
       lojas.forEach((loja)=>{
-        precos.push({loja:loja.id,preco:0,custo:0,margem:0,codigoproduto:'1',tenant_id:'555'})
+        precos.push({loja:loja.id,preco:0,custo:0,margem:0,codigoproduto:'1',lojas:[loja],tenant_id:'555'})
       })
 
-
-      const produto = {codigo:'1',precos:precos};
-
-
-
-
+      const produto = {codigo:'1',nome:'',composicao:'N',formavenda:'N',unidade:'UN',precos:precos};
 
       return{
         message:"Novo produto",

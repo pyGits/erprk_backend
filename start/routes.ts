@@ -31,6 +31,7 @@ Route.resource("/produtos","ProdutosController").apiOnly();
 Route.resource("/produtos/:codigoproduto/precos","PrecosController").apiOnly();
 
 Route.resource('/lojas',"LojasController").apiOnly();
+Route.resource('/tributacoes',"TributacaosController").apiOnly();
 
 
 
