@@ -3,10 +3,10 @@ import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 export default class Produtos extends BaseSchema {
   protected tableName = 'produtos'
 
-  public async up () {
+  public async up() {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
-      table.string('tenant_id').notNullable();
+      table.string('tenant_id').notNullable()
 
       table.string('codigo').notNullable().unique()
       table.string('nome')
@@ -16,6 +16,10 @@ export default class Produtos extends BaseSchema {
       table.string('composicao')
       table.string('formavenda')
       table.string('unidade')
+      table.string('tributacao')
+      table.string('ncm')
+      table.string('cest')
+      table.string('piscofins')
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
@@ -25,7 +29,7 @@ export default class Produtos extends BaseSchema {
     })
   }
 
-  public async down () {
+  public async down() {
     this.schema.dropTable(this.tableName)
   }
 }
