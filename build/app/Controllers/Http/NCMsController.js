@@ -30,4 +30,4 @@ class NcMsController {
     async destroy({}) { }
 }
 exports.default = NcMsController;
-//# sourceMappingURL=NCMsController.js.map
+//# sourceMappingURL=NcmsController.js.map
