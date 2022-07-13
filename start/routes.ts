@@ -19,21 +19,18 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
-Route.group(()=>{
+Route.group(() => {
+  Route.get('/', async () => {
+    return { hello: 'world' }
+  })
 
-Route.get('/', async () => {
-  return { hello: 'world' }
-})
+  Route.get('/produtos/novo', 'ProdutosController.novo')
 
-Route.get('/produtos/novo',"ProdutosController.novo");
+  Route.resource('/produtos', 'ProdutosController').apiOnly()
+  Route.resource('/produtos/:codigoproduto/precos', 'PrecosController').apiOnly()
 
-Route.resource("/produtos","ProdutosController").apiOnly();
-Route.resource("/produtos/:codigoproduto/precos","PrecosController").apiOnly();
+  Route.resource('/ncms', 'NcmsController').apiOnly()
 
-Route.resource('/lojas',"LojasController").apiOnly();
-Route.resource('/tributacoes',"TributacaosController").apiOnly();
-
-
-
+  Route.resource('/lojas', 'LojasController').apiOnly()
+  Route.resource('/tributacoes', 'TributacaosController').apiOnly()
 }).prefix('/api')
-

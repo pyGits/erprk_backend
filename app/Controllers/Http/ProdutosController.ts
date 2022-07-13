@@ -64,7 +64,7 @@ export default class ProdutosController {
     produto.formavenda = body.formavenda
     produto.unidade = body.unidade
     produto.tributacao = body.tributacao
-
+    produto.ncm = body.ncm
     // atualizar preços
     // body.precos?.map(async (p) => {
     //   const preco = await Preco.findByOrFail('id', p.id)

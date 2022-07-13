@@ -41,10 +41,13 @@ export default class Produto extends BaseModel {
 
   @column()
   public tributacao: string
+
   @column()
   public ncm: string
+
   @column()
   public cest: string
+
   @column()
   public piscofins: string
 
