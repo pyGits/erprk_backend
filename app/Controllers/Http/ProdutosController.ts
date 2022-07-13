@@ -109,6 +109,7 @@ export default class ProdutosController {
       formavenda: 'N',
       unidade: 'UN',
       precos: precos,
+      tributacao: 'F00',
     }
 
     return {
